@@ -1,0 +1,87 @@
+# 📧 Integração Evolution + GNOME Online Accounts no Gentoo Linux
+
+Este repositório documenta a configuração do **Evolution** no **Gentoo Linux** com integração nativa ao **GNOME Online Accounts (GOA)**, com foco em **ambientes corporativos**, **segurança** e **boas práticas Gentoo**.
+
+---
+
+## 🎯 Objetivo
+
+- Configurar o Evolution com suporte a Microsoft, Google, LDAP, Kerberos e ProtonMail.
+- Integrar autenticação via GNOME Online Accounts (OAuth2).
+- Documentar USE flags obrigatórias no Gentoo.
+- Fornecer scripts de validação e automação.
+
+---
+
+## 🧭 Escopo Suportado
+
+✔️ Gentoo Linux (stable / testing)  
+✔️ GNOME Shell  
+✔️ OAuth2 / LDAP / Kerberos  
+
+---
+
+## ⚙️ Configuração de USE Flags
+
+```text
+# /etc/portage/package.use/evolution
+mail-client/evolution ldap ssl spell crypt libnotify
+
+# /etc/portage/package.use/evolution-ds
+gnome-extra/evolution-data-server ldap kerberos oauth-gtk3 oauth-gtk4
+```
+
+```bash
+sudo emerge -avuDN --with-bdeps=y @world
+```
+
+---
+
+## 📦 Instalação
+
+```bash
+sudo emerge -av mail-client/evolution gnome-extra/evolution-data-server net-libs/gnome-online-accounts
+```
+
+---
+
+## 🧪 Scripts
+
+### Pré-requisito
+Os scripts utilizam o comando `equery`, fornecido pelo pacote:
+
+```bash
+sudo emerge -av app-portage/gentoolkit
+```
+
+### Permissão de execução
+
+```bash
+chmod +x scripts/*.sh
+```
+
+### Validação de ambiente
+
+```bash
+./scripts/check-useflags.sh
+```
+
+---
+
+## 🔐 Segurança
+
+- OAuth2 via GOA evita uso de senhas em texto puro.
+- Recomendado uso de 2FA.
+- Suporte a GPG/PGP via flag `crypt`.
+
+---
+
+## 📘 Documentação adicional
+
+- `docs/troubleshooting.md`
+
+---
+
+## 📜 Licença
+
+MIT License — veja o arquivo LICENSE.
