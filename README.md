@@ -82,6 +82,32 @@ chmod +x scripts/*.sh
 
 ---
 
+## 📘 Referências
+
+### Upstream GNOME
+- https://help.gnome.org/users/evolution/stable/
+- https://gnome.pages.gitlab.gnome.org/gnome-online-accounts/
+- https://gitlab.gnome.org/GNOME/evolution
+- https://gitlab.gnome.org/GNOME/evolution-data-server
+
+### Documentação por Distribuição
+- https://wiki.gentoo.org/wiki/Evolution
+- https://wiki.gentoo.org/wiki/GNOME_Online_Accounts
+- https://wiki.archlinux.org/title/GNOME/Evolution
+- https://wiki.archlinux.org/title/GNOME_Online_Accounts
+
+### Autenticação e Segurança
+- https://www.openldap.org/doc/
+- https://web.mit.edu/kerberos/
+- https://datatracker.ietf.org/doc/html/rfc6749
+- https://www.gnupg.org/documentation/
+
+### Proton Mail
+- https://proton.me/support/mail/bridge/introduction-bridge
+- https://proton.me/security
+
+---
+
 ## 📜 Licença
 
 MIT License — veja o arquivo LICENSE.
